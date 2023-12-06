@@ -1,4 +1,4 @@
-package savers;
+package savers.info;
 
 public class SaveInfoXML {
 }
