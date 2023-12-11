@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <enrollees>
+    <enrollee fullName="Шалагинова Надежда Владимировна">
+        <subject name="Математика" points="70"/>
+        <subject name="Русский язык" points="90"/>
+        <subject name="Информатика" points="97"/>
+        <subject name="Английский язык" points="50"/>
+    </enrollee>
     <enrollee fullName="Потапов Сергей">
         <subject name="Математика" points="24"/>
         <subject name="Русский язык" points="37"/>

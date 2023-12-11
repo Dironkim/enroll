@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <faculties>
+    <faculty name="Биоинформатика">
+        <requirement name="Проходной" points="250"/>
+        <requirement name="Математика" points="62"/>
+        <requirement name="Русский язык" points="58"/>
+        <requirement name="Информатика" points="41"/>
+    </faculty>
     <faculty name="ФКиФМН">
         <requirement name="Проходной" points="210"/>
         <requirement name="Математика" points="62"/>
