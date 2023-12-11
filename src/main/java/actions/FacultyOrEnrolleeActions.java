@@ -40,8 +40,8 @@ public class FacultyOrEnrolleeActions {
         }
 
         // Проверка на наличие общих предметов между Enrollee и Faculty
-        List<String> facultySubjectNames = getSubjectNames(faculty);
-        List<String> enrolleeSubjectNames = getSubjectNames(enrollee);
+        List<String> facultySubjectNames = new ArrayList<>(getSubjectNames(faculty));
+        List<String> enrolleeSubjectNames = new ArrayList<>(getSubjectNames(enrollee));
 
         facultySubjectNames.removeIf(subject -> subject.equals("Русский язык") || subject.equals("Математика"));
         enrolleeSubjectNames.removeIf(subject -> subject.equals("Русский язык") || subject.equals("Математика"));
@@ -113,15 +113,15 @@ public class FacultyOrEnrolleeActions {
 
     private static int getSubjectPoints(FacultyOrEnrollee facultyOrEnrollee, String subjectName) {
         return facultyOrEnrollee.getSubjectList().stream()
-                .filter(subject -> Objects.equals(subject.name(), subjectName))
+                .filter(subject -> Objects.equals(subject.getName(), subjectName))
                 .findFirst()
-                .map(Subject::points)
+                .map(Subject::getPoints)
                 .orElse(-1); // Возвращаем -1, если предмет не найден
     }
 
     private static List<String> getSubjectNames(FacultyOrEnrollee facultyOrEnrollee) {
         return facultyOrEnrollee.getSubjectList().stream()
-                .map(Subject::name)
+                .map(Subject::getName)
                 .toList();
     }
     private static int generateRandomScore(int min,int max) {

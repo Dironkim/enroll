@@ -1,16 +1,18 @@
 package loaders;
 
+import actions.Misc;
 import structure.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.List;
 
 public class LoadXML implements Loader{
     @Override
-    public List<? extends FacultyOrEnrollee> loadData(String filePath) {
+    public List<FacultyOrEnrollee> loadData(String filePath) {
         try {
             Class<?> targetClass = determineTargetClass(filePath);
 
@@ -25,9 +27,9 @@ public class LoadXML implements Loader{
             Object rootObject = unmarshaller.unmarshal(file);
 
             if (rootObject instanceof FacultiesWrapper) {
-                return ((FacultiesWrapper) rootObject).getFaculties();
+                return Misc.toAncestor(((FacultiesWrapper) rootObject).getFaculties());
             } else if (rootObject instanceof EnrolleesWrapper) {
-                return ((EnrolleesWrapper) rootObject).getEnrollees();
+                return Misc.toAncestor(((EnrolleesWrapper) rootObject).getEnrollees());
             } else {
                 // Вернуть пустой список или обработать по-другому
                 return List.of();

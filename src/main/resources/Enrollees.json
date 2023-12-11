@@ -1,0 +1,228 @@
+[
+    {
+        "type": "enrollee",
+        "name": "Потапов Сергей",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 24
+            },
+            {
+                "name": "Русский язык",
+                "points": 37
+            },
+            {
+                "name": "Информатика",
+                "points": 85
+            },
+            {
+                "name": "Английский язык",
+                "points": 24
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Гужва Анна",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 92
+            },
+            {
+                "name": "Русский язык",
+                "points": 39
+            },
+            {
+                "name": "Информатика",
+                "points": 68
+            },
+            {
+                "name": "Биология",
+                "points": 81
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Шарапова Мария",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 20
+            },
+            {
+                "name": "Русский язык",
+                "points": 79
+            },
+            {
+                "name": "История",
+                "points": 50
+            },
+            {
+                "name": "Биология",
+                "points": 40
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Исаев Иван",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 27
+            },
+            {
+                "name": "Русский язык",
+                "points": 26
+            },
+            {
+                "name": "Английский язык",
+                "points": 61
+            },
+            {
+                "name": "Физика",
+                "points": 49
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Емельяненко Максим",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 88
+            },
+            {
+                "name": "Русский язык",
+                "points": 72
+            },
+            {
+                "name": "Биология",
+                "points": 31
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Безденежных Валерий",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 24
+            },
+            {
+                "name": "Русский язык",
+                "points": 77
+            },
+            {
+                "name": "Информатика",
+                "points": 40
+            },
+            {
+                "name": "",
+                "points": 98
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Власов Артем",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 63
+            },
+            {
+                "name": "Русский язык",
+                "points": 44
+            },
+            {
+                "name": "Биология",
+                "points": 32
+            },
+            {
+                "name": "Физика",
+                "points": 96
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Зубарев Никита",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 39
+            },
+            {
+                "name": "Русский язык",
+                "points": 59
+            },
+            {
+                "name": "История",
+                "points": 26
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Анисимова Дарья",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 54
+            },
+            {
+                "name": "Русский язык",
+                "points": 89
+            },
+            {
+                "name": "Химия",
+                "points": 97
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Глиненко Владимир",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 48
+            },
+            {
+                "name": "Русский язык",
+                "points": 22
+            },
+            {
+                "name": "Биология",
+                "points": 52
+            }
+        ]
+    },
+    {
+        "type": "enrollee",
+        "name": "Климов Егор",
+        "subjectList": [
+            {
+                "name": "Математика",
+                "points": 57
+            },
+            {
+                "name": "Русский язык",
+                "points": 86
+            },
+            {
+                "name": "Информатика",
+                "points": 88
+            },
+            {
+                "name": "Обществознание",
+                "points": 30
+            }
+        ]
+    }
+]

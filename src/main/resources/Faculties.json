@@ -1,0 +1,272 @@
+[
+    {
+        "type": "faculty",
+        "name": "ФКиФМН",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 210
+            },
+            {
+                "name": "Математика",
+                "points": 62
+            },
+            {
+                "name": "Русский язык",
+                "points": 58
+            },
+            {
+                "name": "Информатика",
+                "points": 41
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ФИПНиК",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 121
+            },
+            {
+                "name": "Математика",
+                "points": 53
+            },
+            {
+                "name": "Русский язык",
+                "points": 40
+            },
+            {
+                "name": "Информатика",
+                "points": 96
+            },
+            {
+                "name": "Физика",
+                "points": 81
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ИББТ",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 252
+            },
+            {
+                "name": "Математика",
+                "points": 41
+            },
+            {
+                "name": "Русский язык",
+                "points": 49
+            },
+            {
+                "name": "История",
+                "points": 52
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ЭТФ",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 135
+            },
+            {
+                "name": "Математика",
+                "points": 27
+            },
+            {
+                "name": "Русский язык",
+                "points": 69
+            },
+            {
+                "name": "Биология",
+                "points": 59
+            },
+            {
+                "name": "Обществознание",
+                "points": 66
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ПедИнститут",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 216
+            },
+            {
+                "name": "Математика",
+                "points": 48
+            },
+            {
+                "name": "Русский язык",
+                "points": 52
+            },
+            {
+                "name": "Информатика",
+                "points": 47
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ИнХимЭк",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 175
+            },
+            {
+                "name": "Математика",
+                "points": 35
+            },
+            {
+                "name": "Русский язык",
+                "points": 59
+            },
+            {
+                "name": "Английский язык",
+                "points": 87
+            },
+            {
+                "name": "Химия",
+                "points": 33
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ФАВТ",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 252
+            },
+            {
+                "name": "Математика",
+                "points": 25
+            },
+            {
+                "name": "Русский язык",
+                "points": 64
+            },
+            {
+                "name": "Информатика",
+                "points": 24
+            },
+            {
+                "name": "Химия",
+                "points": 80
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ФТИД",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 278
+            },
+            {
+                "name": "Математика",
+                "points": 64
+            },
+            {
+                "name": "Русский язык",
+                "points": 85
+            },
+            {
+                "name": "Физика",
+                "points": 21
+            },
+            {
+                "name": "Химия",
+                "points": 45
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ФМиС",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 137
+            },
+            {
+                "name": "Математика",
+                "points": 47
+            },
+            {
+                "name": "Русский язык",
+                "points": 54
+            },
+            {
+                "name": "Физика",
+                "points": 95
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ФСА",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 289
+            },
+            {
+                "name": "Математика",
+                "points": 92
+            },
+            {
+                "name": "Русский язык",
+                "points": 28
+            },
+            {
+                "name": "Английский язык",
+                "points": 67
+            },
+            {
+                "name": "Химия",
+                "points": 100
+            }
+        ]
+    },
+    {
+        "type": "faculty",
+        "name": "ФФКиС",
+        "subjectList": [
+            {
+                "name": "Проходной",
+                "points": 220
+            },
+            {
+                "name": "Математика",
+                "points": 29
+            },
+            {
+                "name": "Русский язык",
+                "points": 93
+            },
+            {
+                "name": "Биология",
+                "points": 48
+            },
+            {
+                "name": "Физика",
+                "points": 23
+            }
+        ]
+    }
+]

@@ -1,13 +1,12 @@
 package savers;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import structure.Enrollee;
 import structure.Faculty;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,31 +33,20 @@ public class SaveLetterPDF {
             template = template.replace("[facultyNames]", facultyNames);
 
             // Создаем PDF-документ
-            PDDocument document = new PDDocument();
-            PDPage page = new PDPage();
-            document.addPage(page);
-
-            // Добавляем текст в PDF-документ
-            try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
-                contentStream.setFont( new PDType1Font(Standard14Fonts.FontName.HELVETICA_BOLD), 12);
-                contentStream.beginText();
-                contentStream.newLineAtOffset(50, 700);
-
-                // Добавляем содержимое письма в PDF
-                contentStream.showText(template);
-
-                contentStream.endText();
-            }
-
-            // Сохраняем PDF в новый файл с именем абитуриента в директории src/main/resources
+            Document document = new Document();
             String fileName = enrollee.getFullName() + ".pdf";
-            Path outputPath = Paths.get("src/main/resources", fileName);
-            document.save(outputPath.toAbsolutePath().toString());
-            document.close();
+            PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/"+ fileName));
+            document.open();
+            Font font = FontFactory.getFont("/fonts/DejaVuSans.ttf", "cp1251", BaseFont.EMBEDDED, 10);
+            Paragraph paragraph = new Paragraph(template, font);
 
-            System.out.println("Letter saved to: " + outputPath.toAbsolutePath());
+            document.add(paragraph);
+            document.close();
+            System.out.println("Letter saved ");
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (DocumentException e) {
+            throw new RuntimeException(e);
         }
     }
 }

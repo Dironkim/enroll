@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<enrollees>
+    <enrollee fullName="Потапов Сергей">
+        <subject name="Математика" points="24"/>
+        <subject name="Русский язык" points="37"/>
+        <subject name="Информатика" points="85"/>
+        <subject name="Английский язык" points="24"/>
+    </enrollee>
+    <enrollee fullName="Гужва Анна">
+        <subject name="Математика" points="92"/>
+        <subject name="Русский язык" points="39"/>
+        <subject name="Информатика" points="68"/>
+        <subject name="Биология" points="81"/>
+    </enrollee>
+    <enrollee fullName="Шарапова Мария">
+        <subject name="Математика" points="20"/>
+        <subject name="Русский язык" points="79"/>
+        <subject name="История" points="50"/>
+        <subject name="Биология" points="40"/>
+    </enrollee>
+    <enrollee fullName="Исаев Иван">
+        <subject name="Математика" points="27"/>
+        <subject name="Русский язык" points="26"/>
+        <subject name="Английский язык" points="61"/>
+        <subject name="Физика" points="49"/>
+    </enrollee>
+    <enrollee fullName="Емельяненко Максим">
+        <subject name="Математика" points="88"/>
+        <subject name="Русский язык" points="72"/>
+        <subject name="Биология" points="31"/>
+    </enrollee>
+    <enrollee fullName="Безденежных Валерий">
+        <subject name="Математика" points="24"/>
+        <subject name="Русский язык" points="77"/>
+        <subject name="Информатика" points="40"/>
+        <subject name="" points="98"/>
+    </enrollee>
+    <enrollee fullName="Власов Артем">
+        <subject name="Математика" points="63"/>
+        <subject name="Русский язык" points="44"/>
+        <subject name="Биология" points="32"/>
+        <subject name="Физика" points="96"/>
+    </enrollee>
+    <enrollee fullName="Зубарев Никита">
+        <subject name="Математика" points="39"/>
+        <subject name="Русский язык" points="59"/>
+        <subject name="История" points="26"/>
+    </enrollee>
+    <enrollee fullName="Анисимова Дарья">
+        <subject name="Математика" points="54"/>
+        <subject name="Русский язык" points="89"/>
+        <subject name="Химия" points="97"/>
+    </enrollee>
+    <enrollee fullName="Глиненко Владимир">
+        <subject name="Математика" points="48"/>
+        <subject name="Русский язык" points="22"/>
+        <subject name="Биология" points="52"/>
+    </enrollee>
+    <enrollee fullName="Климов Егор">
+        <subject name="Математика" points="57"/>
+        <subject name="Русский язык" points="86"/>
+        <subject name="Информатика" points="88"/>
+        <subject name="Обществознание" points="30"/>
+    </enrollee>
+</enrollees>

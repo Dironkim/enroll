@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<faculties>
+    <faculty name="ФКиФМН">
+        <requirement name="Проходной" points="210"/>
+        <requirement name="Математика" points="62"/>
+        <requirement name="Русский язык" points="58"/>
+        <requirement name="Информатика" points="41"/>
+    </faculty>
+    <faculty name="ФИПНиК">
+        <requirement name="Проходной" points="121"/>
+        <requirement name="Математика" points="53"/>
+        <requirement name="Русский язык" points="40"/>
+        <requirement name="Информатика" points="96"/>
+        <requirement name="Физика" points="81"/>
+    </faculty>
+    <faculty name="ИББТ">
+        <requirement name="Проходной" points="252"/>
+        <requirement name="Математика" points="41"/>
+        <requirement name="Русский язык" points="49"/>
+        <requirement name="История" points="52"/>
+    </faculty>
+    <faculty name="ЭТФ">
+        <requirement name="Проходной" points="135"/>
+        <requirement name="Математика" points="27"/>
+        <requirement name="Русский язык" points="69"/>
+        <requirement name="Биология" points="59"/>
+        <requirement name="Обществознание" points="66"/>
+    </faculty>
+    <faculty name="ПедИнститут">
+        <requirement name="Проходной" points="216"/>
+        <requirement name="Математика" points="48"/>
+        <requirement name="Русский язык" points="52"/>
+        <requirement name="Информатика" points="47"/>
+    </faculty>
+    <faculty name="ИнХимЭк">
+        <requirement name="Проходной" points="175"/>
+        <requirement name="Математика" points="35"/>
+        <requirement name="Русский язык" points="59"/>
+        <requirement name="Английский язык" points="87"/>
+        <requirement name="Химия" points="33"/>
+    </faculty>
+    <faculty name="ФАВТ">
+        <requirement name="Проходной" points="252"/>
+        <requirement name="Математика" points="25"/>
+        <requirement name="Русский язык" points="64"/>
+        <requirement name="Информатика" points="24"/>
+        <requirement name="Химия" points="80"/>
+    </faculty>
+    <faculty name="ФТИД">
+        <requirement name="Проходной" points="278"/>
+        <requirement name="Математика" points="64"/>
+        <requirement name="Русский язык" points="85"/>
+        <requirement name="Физика" points="21"/>
+        <requirement name="Химия" points="45"/>
+    </faculty>
+    <faculty name="ФМиС">
+        <requirement name="Проходной" points="137"/>
+        <requirement name="Математика" points="47"/>
+        <requirement name="Русский язык" points="54"/>
+        <requirement name="Физика" points="95"/>
+    </faculty>
+    <faculty name="ФСА">
+        <requirement name="Проходной" points="289"/>
+        <requirement name="Математика" points="92"/>
+        <requirement name="Русский язык" points="28"/>
+        <requirement name="Английский язык" points="67"/>
+        <requirement name="Химия" points="100"/>
+    </faculty>
+    <faculty name="ФФКиС">
+        <requirement name="Проходной" points="220"/>
+        <requirement name="Математика" points="29"/>
+        <requirement name="Русский язык" points="93"/>
+        <requirement name="Биология" points="48"/>
+        <requirement name="Физика" points="23"/>
+    </faculty>
+</faculties>

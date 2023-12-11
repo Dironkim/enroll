@@ -4,8 +4,6 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
-import structure.Enrollee;
-import structure.Faculty;
 import structure.FacultyOrEnrollee;
 import structure.Subject;
 
@@ -17,7 +15,7 @@ import java.util.List;
 public class LoadCSV implements Loader{
 
     @Override
-    public List<? extends FacultyOrEnrollee> loadData(String filePath) {
+    public List<FacultyOrEnrollee> loadData(String filePath) {
         return loadFoEsFromCSV(filePath);
     }
 

@@ -1,6 +1,11 @@
 import actions.FacultyOrEnrolleeActions;
 import actions.Misc;
 import loaders.LoadCSV;
+import loaders.LoadJSON;
+import loaders.LoadXML;
+import loaders.Loader;
+import lombok.val;
+import org.apache.commons.lang3.tuple.Pair;
 import savers.SaveLetterPDF;
 import savers.SaveLetterTXT;
 import savers.info.SaveInfoCSV;
@@ -13,9 +18,7 @@ import structure.FacultyOrEnrollee;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static actions.FacultyOrEnrolleeActions.getQualifiedFaculties;
 
@@ -25,12 +28,43 @@ public class ControlPanel {
 
         List<Enrollee> enrolleeList = null;
         List<Faculty> facultyList = null;
+        String format=null;
+        while (format==null) {
+            System.out.println("Choose which format to load from:");
+            System.out.println("1. Load from CSV");
+            System.out.println("2. Load from JSON");
+            System.out.println("3. Load from XML");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
 
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline
+            switch (choice) {
+                case 1:
+                    format = "csv";
+                    break;
+                case 2:
+                    format = "json";
+                    break;
+                case 3:
+                    format = "xml";
+                    break;
+                case 4:
+                    System.out.println("Exiting program. Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+        val temp = loadData(format);
+        enrolleeList=temp.getKey();
+        facultyList = temp.getValue();
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Add Enrollees");
             System.out.println("2. Add Faculties");
-            System.out.println("3. Start Distribution (empty for now)");
+            System.out.println("3. Start Distribution");
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
 
@@ -39,11 +73,11 @@ public class ControlPanel {
 
             switch (choice) {
                 case 1:
-                    enrolleeList = readEnrolleeNamesFromConsole();
+                    enrolleeList.addAll(readEnrolleeNamesFromConsole());
                     saveInfos(enrolleeList);
                     break;
                 case 2:
-                    facultyList = readFacultyNamesFromConsole();
+                    facultyList.addAll(readFacultyNamesFromConsole());
                     saveInfos(facultyList);
                     break;
                 case 3:
@@ -57,6 +91,29 @@ public class ControlPanel {
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
         }
+    }
+    public static Map.Entry<List<Enrollee>, List<Faculty>> loadData(String format) {
+        List<Enrollee> enrollees = new ArrayList<>();
+        List<Faculty> faculties = new ArrayList<>();
+
+        try {
+            List<String> fileLines = Files.readAllLines(Path.of("src/main/resources/Enrollees."+format));
+            enrollees.addAll(loadEnrolleesFromFile(fileLines, format));
+        } catch (IOException e) {
+            System.out.println("Error loading enrollees");
+            return null;
+        }
+
+        try {
+            List<String> fileLines = Files.readAllLines(Path.of("src/main/resources/Faculties."+format));
+            faculties.addAll(loadFacultiesFromFile(fileLines, format));
+        } catch (IOException e) {
+            System.out.println("Error loading faculties");
+            return null;
+        }
+
+        System.out.println("Data loaded successfully");
+        return new AbstractMap.SimpleEntry<>(enrollees, faculties);
     }
 
     public static void startDistribution(List<Enrollee> enrollees, List<Faculty> faculties) {
@@ -79,19 +136,7 @@ public class ControlPanel {
     public static List<Enrollee> readEnrolleeNamesFromConsole() {
         List<Enrollee> enrollees = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-
-        try {
-            // Загружаем данные из файла
-            List<String> fileLines = Files.readAllLines(Path.of("src/main/resources/Enrollees.csv"));
-            // Реализуйте логику загрузки данных из файла и создания объектов FacultyOrEnrollee
-
-            // Добавляем данные из файла в список
-            enrollees.addAll(loadEnrolleesFromFile(fileLines));
-
-            System.out.println("Data loaded from file: " + enrollees);
-
             System.out.println("Enter enrollee names from console (type 'exit' to finish):");
-
             while (true) {
                 System.out.print("Enter enrollee name: ");
                 String input = scanner.nextLine();
@@ -104,32 +149,22 @@ public class ControlPanel {
                 Enrollee enrollee = FacultyOrEnrolleeActions.newEnrollee(input);
                 enrollees= Misc.toChildEnrollee( FacultyOrEnrolleeActions.addFacultyOrEnrollee(enrollee, Misc.toAncestor(enrollees)));
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         return enrollees;
     }
-    private static List<Enrollee> loadEnrolleesFromFile(List<String> fileLines) {
-        LoadCSV loader = new LoadCSV();
-        List<Enrollee> Enrollees = Misc.toChildEnrollee(loader.loadFoEsFromCSV("src/main/resources/Enrollees.csv"));
+    private static List<Enrollee> loadEnrolleesFromFile(List<String> fileLines, String format) {
+        Loader loader = getLoaderByFormat(format);
+        List<Enrollee> Enrollees = Misc.toChildEnrollee(loader.loadData("src/main/resources/Enrollees."+format));
         return Enrollees;
     }
-    private static List<Faculty> loadFacultiesFromFile(List<String> fileLines) {
-        LoadCSV loader = new LoadCSV();
-        List<Faculty> faculties = Misc.toChildFaculty(loader.loadFoEsFromCSV("src/main/resources/Faculties.csv"));
+    private static List<Faculty> loadFacultiesFromFile(List<String> fileLines, String format) {
+        Loader loader = getLoaderByFormat(format);
+        List<Faculty> faculties = Misc.toChildFaculty(loader.loadData("src/main/resources/Faculties."+format));
         return faculties;
     }
     public static List<Faculty> readFacultyNamesFromConsole() {
         List<Faculty> faculties = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-
-        try {
-            List<String> fileLines = Files.readAllLines(Path.of("src/main/resources/Enrollees.csv"));
-            faculties.addAll(loadFacultiesFromFile(fileLines));
-
-            System.out.println("Data loaded from file: " + faculties);
-
             System.out.println("Enter faculty names from console (type 'exit' to finish):");
 
             while (true) {
@@ -146,10 +181,15 @@ public class ControlPanel {
                         .addFacultyOrEnrollee(faculty, Misc.toAncestor(faculties)));
 
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         return faculties;
+    }
+    private static Loader getLoaderByFormat(String format) {
+        return switch (format.toLowerCase()) {
+            case "csv" -> new LoadCSV();
+            case "json" -> new LoadJSON();
+            case "xml" -> new LoadXML();
+            default -> throw new UnsupportedOperationException("Unsupported file format");
+        };
     }
 }

@@ -11,11 +11,10 @@ import com.squareup.moshi.JsonAdapter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.io.File;
 import java.io.IOException;
 public class LoadJSON implements Loader{
     @Override
-    public List<? extends FacultyOrEnrollee> loadData(String filePath) {
+    public List<FacultyOrEnrollee> loadData(String filePath) {
         try {
             // Создание экземпляра Moshi с поддержкой адаптера для полиморфизма
             Moshi moshi = new Moshi.Builder()
@@ -23,7 +22,7 @@ public class LoadJSON implements Loader{
                     .build();
 
             // Создание адаптера для списка FacultyOrEnrollee
-            JsonAdapter<List<? extends FacultyOrEnrollee>> jsonAdapter = moshi.adapter(
+            JsonAdapter<List<FacultyOrEnrollee>> jsonAdapter = moshi.adapter(
                     com.squareup.moshi.Types.newParameterizedType(List.class, FacultyOrEnrollee.class)
             );
             String jsonContent = new String(Files.readAllBytes(Paths.get(filePath)));

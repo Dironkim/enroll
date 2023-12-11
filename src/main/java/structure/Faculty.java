@@ -2,6 +2,7 @@ package structure;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -12,12 +13,17 @@ import java.util.List;
 @SuperBuilder
 @XmlAccessorType(XmlAccessType.NONE)
 public class Faculty extends FacultyOrEnrollee{
-    @XmlAttribute
+    @XmlAttribute(name = "name")
     public String getName() {
         return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
     @XmlElement(name = "requirement")
     public List<Subject> getSubjectList() {
         return subjectList;
+    }
+    public Faculty() {
     }
 }

@@ -59,7 +59,7 @@ public class SaveInfoCSV implements SaverInfo{
         for (int i = 1; i < subjectOrder.size(); i++) {
             String subjectName = subjectOrder.get(i);
             Subject subject = findSubject(subjects, subjectName);
-            data[i] = (subject != null) ? String.valueOf(subject.points()) : "";
+            data[i] = (subject != null) ? String.valueOf(subject.getPoints()) : "";
         }
         return data;
     }
@@ -67,7 +67,7 @@ public class SaveInfoCSV implements SaverInfo{
     // Найти предмет в списке
     private Subject findSubject(List<Subject> subjects, String subjectName) {
         for (Subject subject : subjects) {
-            if (subject.name().equals(subjectName)) {
+            if (subject.getName().equals(subjectName)) {
                 return subject;
             }
         }

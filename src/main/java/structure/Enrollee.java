@@ -14,12 +14,17 @@ import java.util.List;
 @SuperBuilder
 @XmlAccessorType(XmlAccessType.NONE)
 public class Enrollee extends FacultyOrEnrollee {
-    @XmlAttribute
+    @XmlAttribute(name = "fullName")
     public String getFullName() {
         return name;
+    }
+    public void setFullName(String fullName) {
+        this.name = fullName;
     }
     @XmlElement(name = "subject")
     public List<Subject> getSubjectList() {
         return subjectList;
+    }
+    public Enrollee() {
     }
 }
